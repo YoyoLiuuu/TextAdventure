@@ -30,3 +30,5 @@ Items:
 3. Player can get items in certain locations and carry them in Inventory
 
 Movement
+
+changes
