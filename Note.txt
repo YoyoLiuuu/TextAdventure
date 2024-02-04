@@ -1,0 +1,32 @@
+# To be deleted before submission.
+
+
+Goal:
+- make a small scale adventure game @UofT
+- find items around campus
+    - T-Card
+    - Lucky Exam Pen
+    - Cheat sheet
+- win the game if player finds all items and bring them to exam room before exam starts
+
+How does this game work?
+- honestly no idea lol
+
+Check before submission:
+1. Complete docstrings for all functions (and doctest)
+2. Preconditions and representation invariants for all classes and functions
+3. Write helper functions to eliminate duplicate code
+4. For functions with randomness or files, no need for
+
+Show location:
+1. After showing full description once, don't show full.
+2. Location number in the header. Unless showing number spoil location.
+3. Look -> print full description of the current location
+4. Each location is an instance of the Location class.
+
+Items:
+1. Inventory -> list of what the player is currently carrying
+2. Each item -> an instance of the Item class
+3. Player can get items in certain locations and carry them in Inventory
+
+Movement
