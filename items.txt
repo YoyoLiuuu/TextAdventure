@@ -1,1 +1,14 @@
-1 10 5 Cheat Sheet
+0 0 0 Backpack
+0 31 10 Water Bottle
+0 6 5 Granola Bar
+1 1 5 Library Book
+1 9 10 Dorm Keycard
+17 18 5 Presto Card
+14 22 10 ROM Ticket
+19 39 50 Cheat Sheet
+14 14 5 Coffee Cup
+30 31 0 Coffee Reciept
+31 39 50 Lucky Pen
+23 27 10 Security Guard's Keys
+27 0 0 Wallet
+25 39 50 T-Card

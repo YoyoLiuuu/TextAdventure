@@ -7,185 +7,314 @@ END
 LOCATION 0
 0
 You are in a study room in Robarts Library.
-You are in a single-person study room in Robarts Library. The smell of stale coffee is in the air. It's very quiet in here. There is a whiteboard on the wall and a table in the middle of the room with one chair. There is light coming in from a window on the wall opposite the door, and you can see the buildings across the street through it. Your things are strwen across the table, completely disordered. There is a garbag can in the corner of the room. You cough, as if you have inhaled a lot of dust.
+You are in a single-person study room in Robarts Library. The smell of stale coffee is in the air. It's very quiet in
+here. There is a whiteboard on the wall and a table in the middle of the room with one chair. There is light coming in
+from a window on the wall opposite the door, and you can see the buildings across the street through it. Your things are
+strewn across the table, completely disordered. You remember coming to Robarts because it's practically beside your
+dorm. There is a garbage can in the corner of the room. You cough, as if you have inhaled a lot of dust.
 END
 
 LOCATION 1
 0
 You are in the book section of Robarts library.
-Outside the study room in Robarts that you woke up in is a book section. Specifically, it holds all the course material for computer science classes. There are two bookshelves facing each other that are filled with course textbooks covering different courses, programs years, and difficulty. The book closest to you is for CSC108 and the book farthest is for CSC496. There are two books slightly sticking out from the rest. Odd. The librarians are usualy very neat.
+Outside the study room in Robarts that you woke up in is a book section. Specifically, it holds all the course material
+for computer science classes. There are two bookshelves facing each other that are filled with course textbooks covering
+different courses, programs years, and difficulty. The book closest to you is for CSC108 and the book farthest is for
+CSC496. There are two books slightly sticking out from the rest. Odd. The librarians are usualy very neat. Yet, the
+books look untouched, as if a cloud of dust will come out of them if opened.
 END
 
 LOCATION 2
 1
-You are at the front desk of Robarts library.
-There is a large desk in front of you and someone is sitting behind the desk and wearing a badge that says 'librarian helper'. They are on a computer. There is a large box beside the desk with the word 'lost and found' on it. The librarian helper smiles at you and asks if there's anything they can do to help you.
+You are in the hallway in Robarts.
+You are in a hallway leading to the front of Robarts library. You can hear some chattering coming from in front of you.
+The front desk phone ringing, and you can hear the shuffling of whispering students coming into the library. Behind you
+is complete silence and you can smell the faint scent of paper.
 END
 
 LOCATION 3
+1
+You are at the front desk of Robarts library.
+There is a large desk in front of you and someone is sitting behind the desk and wearing a badge that says 'librarian
+helper'. They are on a computer. There is a large box beside the desk with the word 'lost and found' on it. The
+librarian helper smiles at you and asks if there's anything they can do to help you.
+END
+
+LOCATION 4
 10
 You are in front of Robart's lost and found box.
-You are in front of Robart's lost and found box. It is beside the reception desk. It is a big blue box with a paper stuck to it that says "LOST AND FOUND". You can see some things poking out of it.
-END
-
-LOCATION 4
-2
-You are on the interior side Robart's front door.
-You are standing right at the entrance of Robarts with the door in front of you. The only noise you hear is the quiet shuffling of papers and the sound of traffic seeping through the cracks of the door from the outside..
-END
-
-LOCATION 4
-3
-You are outside Robarts facing St. George Street.
-You are outside Robarts Library facing St. George Street. There are cars passing by on the road and a large crowd of students with backpacks on bustling to get to their next class. Everyone looks like they have a place to be. This street is very busy during the school day due to the high volume of university buildings, coffee shops, and restaurants on it. You hear a low hiss towards your right.
+You are in front of Robart's lost and found box. It is beside the reception desk. It is a big blue box with a paper
+stuck to it that says "LOST AND FOUND". You can see some things poking out of it, but nothing that looks familiar.
+There's a musty smell coming out of the box, as if someone left their gym clothes in there and never came back for them.
 END
 
 LOCATION 5
-1
-You are outside your dorm building.
-You are outside your dorm building. There is a glass door in front of you, and through it, you can see a hallway of dorm rooms and two elevators on the left side. There is a key swiper to the left of the door with a red light blinking on it.
+2
+You are on the interior side Robart's front door.
+You are standing right at the entrance of Robarts with the door in front of you. The only noise you hear is the quiet
+shuffling of papers and the sound of traffic seeping through the cracks of the door from the outside street. There is a
+bit of a chill coming through when the door gets opened.
+END
+
+LOCATION 6
+3
+You are outside Robarts facing St. George Street.
+You are outside Robarts Library facing St. George Street. There are cars passing by on the road and a large crowd of
+students with backpacks on bustling to get to their next class. Everyone looks like they have a place to be. This street
+is very busy during the school day due to the high volume of university buildings, coffee shops, and restaurants on it.
+You hear a low hiss towards your right.
+END
+
+LOCATION 7
+0
+You are standing in front of a food truck.
+You are standing in front of a food truck near Robarts. The truck is bright red and has a giant picture of a chicken on
+it. You can smell the fried chicken goodness and out of nowhere, your stomach starts growling. There is no one waiting
+to order so the cook in the truck looks at you expectantly, waiting for you to order.
 END
 
 LOCATION 8
-3
-You are in your dorm building's first floor hallway.
-You are in your dorm building's first floor hallway. There are two elevators to your left and numerous rooms in front of you on either side of the hallway. The rooms on the right have even numbers starting with 100 and the ones on the left have odd numbers starting with 101.
-END
+5
+You are near the university buildings on St. George Street.
+You are standing on St. George Street near Robarts library. There is a lot of traffic both on the road and on the
+sidewalk. You look down the road and across to see that you are in area where most dormitory buildings are. There's
+Morrison Hall in front of you and Innis College down the street.
 
 LOCATION 9
-5
-You are outside room 105 in your dorm building.
-You are outside room 105 in your dorm building. The wooden door leading to the room is closed. Near the door handle, there is a card swiper and a red light. You don't hear anyone else in the building's hallway or inside the room.
+1
+You are outside your dorm building.
+You are outside your dorm building. There is a glass door in front of you, and through it, you can see a hallway of dorm
+rooms and two elevators on the right side. There is a key swiper to the left of the door with a red light blinking on
+it.
 END
 
-Location 10
-7
-You are at the door of your dorm room.
-You are at your dorm room's entrance. Evidence of a tired and overworked university student is everywhere. There's an unmade bed pushed to the wall, and a disorganized desk. The desk has 3 drawers. The walls are covered in posters from movies and video games. The curtains are drawn shut and the door to the closet is open, revealing a messy closet and dirty clothes haphazardly thrown on closet floor.
+LOCATION 10
+3
+You are on your dorm building's first floor.
+You are in your dorm building's first floor entrance, just about to enter the hallway. The exit door is directly behind
+you. There are two elevators to your right and the hallway leads to more rooms in front of you.
 END
 
 LOCATION 11
 10
-You are standing in front of your closet.
-You are standing in front of your messy two-door closet. One door is open, and you can see the messy shelf on top where you throw all your pants after a long day of classes. On the closet floor, you see an overflowing basket of laundry (is there even a basket under there?) of laundry that you swore you would do a week ago.
+You are standing in your dorm's hallway.
+You are standing in your dorm's hallway. The door leading to the outside is to the south. The elevators are to the east.
+In front of you, there are dorm rooms. The ones on the right have odd numbers starting at 101. You hear light chattering
+coming from a room up ahead on the left. The door is open.
 END
 
 LOCATION 12
-20
-You are standing in front of your desk.
-You are standing in front of yuor desk. It has three drawers on its side. On top of the table, there is a lamp, a pair of headphones and a calender filled in with school deadlines.
+0
+You are outside room 103 of your dorm building.
+You are outside room 103 in your dorm building. The wooden door leading to the room is closed. Near the door handle,
+there is a card swiper and a red light. You can hear the sound of two girls having a conversation through the door.
 END
 
-LOCATION 13
-10
-You are in your dorm's common room.
-You are in your dorm's common room. There is are couches pushed against the wall and a coffee table in the middle of them. The coffee table has a lamp and a few other things strewn on it. There is someone quietly studying in the corner of the room with their headphones on. They look very focused.
+Location 13
+7
+You are outside room 105 of your dorm building.
+You are outside room 105 of your dorm building. The wooden door leading to the room is closed. There are no sounds
+coming from the other side of the door. Directly across from this room is the common room.
 END
 
 LOCATION 14
-0
-You are on the street in front of your dorm.
-You are on the street in front of your dorm. The street is bustling with the sounds of students talking and cars honking. The streetcar is waiting with its doors open in front of you. The bus driver is looking at you. There is a card tapping machine on the door of the streetcar. People in the streetcar are looking at you expectantly.
+10
+You are in your dorm's common room.
+You are in your dorm's common room. There is are couches pushed against the wall and a coffee table in the middle of
+them. The coffee table has a lamp and a few other things strewn on it. There is someone quietly studying in the corner
+of the room with their headphones on. They look very focused.
 END
 
-LOCATION 15
+Location 15
 10
-You are on the streetcar.
-You are on the streetcar. There are not too many people on the car today. It must be your lucky day. It's windy and the windows to the streetcar are open. You can hear the incessant sound of papers rustling near you.
+You are inside your dorm room.
+You are at the entrance of your dorm room. Evidence of a tired and overworked university student is everywhere. There's
+an unmade bed pushed to the wall, and a disorganized desk. The desk has 3 drawers. The walls are covered in posters from
+movies and video games. The curtains are drawn shut and the door to the closet is open, revealing a messy closet and
+dirty clothes haphazardly thrown on closet floor.
 END
 
 LOCATION 16
-0
-You are on the streetcar at its last stop.
-You are on the streetcar at its last stop. The few remaining passengers are all getting off. The bus driver announces that all passengers must get off because the car will now be out of service.
+10
+You are standing in front of your closet.
+You are standing in front of your messy two-door closet. One door is open, and you can see the messy shelf on top where
+you throw all your pants after a long day of classes. On the closet floor, you see an overflowing basket of laundry (is
+there even a basket under there?) of laundry that you swore you would do a week ago.
 END
 
 LOCATION 17
-0
-You are on Bloor St.
-You are on Bloor St. There are many buildings lined up in front of you. There is a mueseum in front of you and multiple coffee shops lined up further down the road.
+20
+You are standing in front of your desk.
+You are standing in front of your desk. It has three drawers on its side. On top of the table, there is a lamp, a pair
+of headphones and a calendar filled in with school deadlines.
 END
 
 LOCATION 18
-1
-You are in front of Cafe Victoria, a coffee shop.
-You are in front of Cafe Victoria, a coffee shop on Bloor St. It is a vibrant pink colour and the name of the stop is in pastel blue. It seems geared towards younger populations. Indeed, there are streams of university students going in and out of the coffee shop.
+0
+You are on the street in front of your dorm.
+You are on the street in front of your dorm. The street is bustling with the sounds of students talking and cars
+honking. The streetcar is waiting with its doors open in front of you. The bus driver is looking at you. There is a card
+tapping machine on the door of the streetcar. People in the streetcar are looking at you expectantly.
 END
 
 LOCATION 19
-15
-You are inside Cafe Victoria.
-You are inside Cafe Victoria. There is a comfortable booth to the right of you. It has a reciept for a recent order on it. There are about 10 tables in the shop and 7 of them are occupied by studying students. There is a long line to order coffee. There is another door leading to the outside of the coffee shop on the far end of the cafe.
+10
+You are on the streetcar.
+You are on the streetcar. There are not too many people on the car today. It must be your lucky day. It's windy and the
+windows to the streetcar are slightly open, letting the breeze come in. You notice the yellow strip that passengers are
+supposed to press in order to request a stop. You can hear the incessant sound of papers rustling near you. It's
+starting to get annoying.
 END
 
 LOCATION 20
-9
-You are in Cafe Victoria's outdoor patio.
-You are in Cafe Victoria's outdoor patio. There are many open tables. The table are all uniform with the same chairs laid out in the same way. All the tables are clean except one. It has some sort of black blob on the otherwise clean surface.
+0
+You are where the streetcar comes on Bloor St.
+You are standing where passengers waiting for the Bloor St. streetcar stand. There are a few passengers around you,
+waiting for the streetcar to come. There are big buildings all around you. Towards the south is the sidewalk closest to
+you.
 END
 
 LOCATION 21
-1
-You are outside the ROM.
-You are outside the ROM. There is a long line of people with a security guard standing in front of them. He is scanning the tickets that are being handed to him one by one, admitting people into the mueseum.
+5
+You are on Bloor St.
+You are on Bloor St. There are many buildings lined up in front of you. There is a mueseum in front of you and multiple
+coffee shops lined up further down the road. The street is not as busy at St. George Street.
 END
 
 LOCATION 22
-3
-You are in the ROM's foyer.
-You are in the ROM's foyer. There are more securtity guards roaming here, helping visitors find the exhibitions they want to see. All of the guards are wearing the same uniform and there is a jingling noise coming from the security guard closest to you. You realize that it's keeping from his keyring that has multiple keys on it, and it is making noise as he moves his arms, showing someone directions. You see a security guard coming from the left side of the foyer.
+1
+You are outside the ROM.
+You are outside the ROM. There is a long line of people with a security guard standing in front of them. He is scanning
+the tickets that are being handed to him one by one, admitting people into the mueseum.
 END
 
 LOCATION 23
-5
-You are in front of a large steel door.
-You are in front of a large steel door. It has a keyhole in it. You can't hear anything on the other side of the door. It's silent.
+3
+You are in the ROM's foyer.
+You are in the ROM's foyer. There are more securtity guards roaming here, helping visitors find the exhibitions they
+want to see. All of the guards are wearing the same uniform and there is a jingling noise coming from the security guard
+closest to you. You realize that it's keeping from his keyring that has multiple keys on it, and it is making noise as
+he moves his arms, showing someone directions. You see a security guard coming from the south side of the foyer, and he
+is reattaching the keyring to his belt.
 END
 
 LOCATION 24
-20
-You are inside a room in the ROM.
-You are inside a room in the ROM. There is no one else here. There are two empty chairs facing an array of monitors. It's surveillance cameras of the entire museum. There is a dek underneath the wall-mounted monitors. The desk has two drawers on the side, one of which has a keyhole.
+15
+You are standing in a hallway of the ROM.
+You are standing in a desolate hallway of the ROM. The chatter of excited kids and overwhelemed parents has quieted
+down. There's no one here, not even security guards, but you don't know when the next one is going to show up. There is
+a cleaning closet to the east, an empty office to the west, and a closed door to the south. This door has a special
+security lock the other doors don't have.
 END
 
 LOCATION 25
 10
 You are in the ROM's dinosaur exhibition.
-You are in the ROM's dinosaur exhibition. There are large dinosaur fossils displayed around the room. There is a class of young stduents, must be in kindergarten, looking at the dinosaurs in awe. There's a lot of dust in the air, due to the ceiling windos high up letting a lot of sunlight in.
+You are in the ROM's dinosaur exhibition. There are large dinosaur fossils displayed around the room. There is a class
+of young stduents, must be in kindergarten, looking at the dinosaurs in awe. There's a lot of dust in the air, due to
+the ceiling windos high up letting a lot of sunlight in.
 END
 
 LOCATION 26
-1
-You are at the intersection of College and McCaul St.
-You are at the busy intersection of College and McCaul St. There are students crossing the road, some of them on their phones while others look stressed with their noses buried in books or iPads.
+0
+You are standing in front of an empty office in the ROM.
+You are standing in front of an empty office in the ROM. The door is locked and no noise is co,ing from the other side
+of the office. Peering through the window, you see a normal office with the lights off, nothing out of the ordinary.
 END
 
 LOCATION 27
-2
-You are on McCaul St.
-You are on McCaul St. There are less students on this road and it's smaller as well. Most students aregoing in and out of the same building. The ones coming out look relieved, as if they're breathing in fresh air for the first time in a long time. The ones going in look apprehensive and afraid.
+5
+You are in front of a large steel door.
+You are in front of a large steel door. It has a keyhole in it. You can't hear anything on the other side of the door.
+It's silent. It's different from the other doors in the hallway, a lot more secure.
 END
 
 LOCATION 28
-5
-You are outside of the Exam Centre.
-You are outside of a large building. On your left, there is a sign that reads "University of Toronto Exam Centre".
+20
+You are inside a room in the ROM.
+You are inside a room in the ROM. There is no one else here. There are two empty chairs facing an array of monitors.
+It's surveillance cameras of the entire museum. There is a dek underneath the wall-mounted monitors. The desk has two
+drawers on the side, one of which has a keyhole.
 END
 
 LOCATION 29
-10
-You are inside the exam centre.
-You are inside the exam centre. It is filled with students and the sound of anxious chattering, the type that usually comes before a big test. There is a group of students going up the elevstor to your righ6 , one waiting by the basement room on your left, and one on the main floor in front of you.
+1
+You are in front of Cafe Victoria, a coffee shop.
+You are in front of Cafe Victoria, a coffee shop on Bloor St. It is a vibrant pink colour and the name of the stop is in
+pastel blue. It seems geared towards younger populations. Indeed, there are streams of university students going in and
+out of the coffee shop.
 END
 
 LOCATION 30
-0
-You are inside the basement exam room.
-You are inside the basement exam room in the exam centre. One of yuor friends comes up to you, confused about why you're in this room.
+15
+You are inside Cafe Victoria.
+You are inside Cafe Victoria. There is a comfortable booth to the right of you. It has a reciept for a recent order on
+it. There are about 10 tables in the shop and 7 of them are occupied by studying students. There is a long line to order
+coffee. There is another door leading to the outside of the coffee shop on the far end of the cafe.
 END
 
 LOCATION 31
+9
+You are in Cafe Victoria's outdoor patio.
+You are in Cafe Victoria's outdoor patio. There are many open tables. The table are all uniform with the same chairs
+laid out in the same way. All the tables are clean except one. It has some sort of black blob on the otherwise clean
+surface.
+END
+
+LOCATION 32
+1
+You are at the intersection of College and McCaul St.
+You are at the busy intersection of College and McCaul St. There are students crossing the road, some of them on their
+phones while others look stressed with their noses buried in books or iPads.
+END
+
+LOCATION 33
+2
+You are on McCaul Street.
+You are on McCaul Street. There are less students on this road and it's smaller as well. Most students aregoing in and
+out of the same building. The ones coming out look relieved, as if they're breathing in fresh air for the first time in
+a long time. The ones going in look apprehensive and afraid.
+END
+
+LOCATION 34
+0
+You are on the west side of the Health Sciences Building on McCaul Street.
+You are on the west side of the Health Sciences Building on McCaul Street. There are many students around.
+END
+
+LOCATION 35
+5
+You are outside of the Exam Centre.
+You are outside of a large building. On your left, there is a sign that reads "University of Toronto Exam Centre". The
+building is located on McCaul Street.
+END
+
+LOCATION 36
+10
+You are inside the exam centre foyer.
+You are inside the exam centre foyer. It is filled with students and the sound of anxious chattering, the type that
+usually comes before a big test. There is a group of students going up the elevstor to your righ6 , one waiting by the
+basement room on the left, and one on the main floor in front of you.
+END
+
+LOCATION 37
 40
 You are in the exam room on the main floor.
-You are in the exam room on the main floor of the exam centre. You see a friend waving you towards them, pointing to an empty desk beside them. You take a deep breath and go sit beside them.
+You are in the exam room on the main floor of the exam centre. You see a friend in front of you waving you towards them,
+pointing to an empty desk beside them.
+END
+
+LOCATION 38
+0
+You are inside the basement exam room.
+You are inside the basement exam room in the exam centre. There are approximately 200 student in the room with desks
+arranged uniformly, each with an exam paper on it. One of your friends comes up to you, confused about why you're in
+this room.
+END
+
+LOCATION 39
+30
+You are sitting in an exam room in Exam Centre.
+You are sitting on a desk with the exam paper in front of you. You take a deep breath as the TA begins going over the
+rules and the time limit. You're exhausted, but ready for this.
 END
