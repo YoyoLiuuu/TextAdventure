@@ -1,9 +1,3 @@
-LOCATION -1
-0
-That way is blocked.
-That way is blocked.
-END
-
 LOCATION 0
 0
 You are in a study room in Robarts Library.
@@ -317,4 +311,10 @@ LOCATION 39
 You are sitting in an exam room in Exam Centre.
 You are sitting on a desk with the exam paper in front of you. You take a deep breath as the TA begins going over the
 rules and the time limit. You're exhausted, but ready for this.
+END
+
+LOCATION -1
+0
+That way is blocked.
+That way is blocked.
 END
