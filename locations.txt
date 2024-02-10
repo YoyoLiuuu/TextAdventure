@@ -66,6 +66,7 @@ You are near the university buildings on St. George Street.
 You are standing on St. George Street near Robarts library. There is a lot of traffic both on the road and on the
 sidewalk. You look down the road and across to see that you are in area where most dormitory buildings are. There's
 Morrison Hall in front of you and Innis College down the street.
+END
 LOCATION 9
 1
 You are outside your dorm building.
