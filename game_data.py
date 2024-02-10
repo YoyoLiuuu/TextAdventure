@@ -149,7 +149,7 @@ class Location:
 
         # TODO Add more details here about the initialization if needed
         """
-        self.num = int(num[-1])
+        self.num = int(num[-2:])
         self.points = int(points)
         self.short = short
         self.long = long
@@ -328,10 +328,9 @@ class World:
         final_location = []
         for element in the_location:
             while len(element) > 4:
-                element[-2] += element[-1]
+                element[-2] += ' ' + element[-1]
                 element.pop()
             final_location.append(Location(element[0], element[1], element[2], element[3], self.map, self.items))
-        print([item.visits for item in final_location])
         return final_location
 
     def load_items(self, items_data: TextIO) -> list[Item]:

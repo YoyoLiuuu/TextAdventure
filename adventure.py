@@ -133,7 +133,9 @@ if __name__ == "__main__":
 
     menu = ["look", "inventory", "score", "quit", "back"]
     while not p.victory:
+        print(p.x, p.y)
         location = w.get_location(p.x, p.y)
+        print(location.visits)
 
         if p.total_moves >= 60:
             print("You've reached the maximum number of moves. You lost the game."
@@ -156,12 +158,14 @@ if __name__ == "__main__":
             print(action)
 
         if location.num == 39:
-            cur_inventory = [item.get_name() for item in p.inventory]
+            cur_inventory = [item.name for item in p.inventory]
             if 'LuckyPen' in cur_inventory and 'CheatSheet' in cur_inventory and 'T-Card' in cur_inventory:
                 drop_final_items = input("Congratulations, you've reached the Exam Centre. "
                                          "You have everything you need for this exam. "
                                          "Please drop your Lucky Pen, Cheat Sheet and T-Card from your inventory. ")
                 p.victory = True
+            else:
+                print("However, you don't have what you need! Where is everything you need for your exam?")
 
         p.choice = input("\nEnter action: ")
 
@@ -174,7 +178,12 @@ if __name__ == "__main__":
         if p.choice in menu:
             do_action(w, p, location)
         else:
-            move(p, location)
+            if location.num == 20 and p.choice == 'W':
+                print("Sorry, you cannot go west from here. This is because you took a streetcar to get here. "
+                      "To go back, you have to take the streetcar on the other side of the road. "
+                      "However, that streetcar back is not arriving anytime soon.")
+            else:
+                move(p, location)
 
     if p.total_moves <= 60:
         print("Congratulations! You arrived at the exam on time with everything you need. You won the game!")
