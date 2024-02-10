@@ -54,6 +54,13 @@ class Item1(Item):
         - isinstance(self.point_scored, bool)
     """
 
+    name: str
+    start_position: int
+    target_position: int
+    target_points: int
+    current_location: int
+    point_scored: bool
+
     def __init__(self, name: str, start: int, target: int, target_points: int) -> None:
         """Initialize a new item.
         """
@@ -77,6 +84,7 @@ class Item1(Item):
     def get_info(self) -> str:
         return self.name
 
+
 class Item2(Item):
     """An item in our text adventure game world.
     TODO: add more rep invariants and instance attributes
@@ -86,8 +94,9 @@ class Item2(Item):
         - start_position: Position on grid where item is initially found
         - target_position: Position on grid where item has to be deposited to get points
         - target_points: Points recieved for dropping item in current location
-        - current_location: ???
+        - current_location: Item's current location
         - point_scored: States whether the player scored the points
+        - weight: Item's weight
 
     Representation Invariants:
         - self.name != ''
@@ -96,6 +105,15 @@ class Item2(Item):
         - self.start_position <= self.target_position
         - isinstance(self.point_scored, bool)
     """
+
+    name: str
+    start_position: int
+    target_position: int
+    target_points: int
+    current_location: int
+    point_scored: int
+    weight: float
+    description: str
 
     def __init__(self, name: str, start: int, target: int, target_points: int, weight: float, description: str) -> None:
         """Initialize a new item.
@@ -143,6 +161,15 @@ class Location:
         - self.visits >= 0
     """
 
+    num: int
+    points: int
+    short: str
+    long: str
+    map: list[list[int]]
+    items: list[Item]
+    actions: list[str]
+    visits: int
+
     def __init__(self, num: str, points: str, short: str, long: str, a_map: list[list[int]], items: list[Item]) -> None:
         """Initialize a new location.
 
@@ -172,7 +199,7 @@ class Location:
         #
         # The only thing you must NOT change is the name of this class: Location.
         # All locations in your game MUST be represented as an instance of this class.
-    def get_items(self, items) -> list:
+    def get_items(self, items: list) -> list:
         """
         Goes through all items and returns a list of the items available at the specific location
         """
@@ -228,6 +255,16 @@ class Player:
         - self.total_moves >= 0
     """
 
+    x: int
+    y: int
+    inventory: list
+    victory: bool
+    score: int
+    previous_actions: list
+    total_moves: int
+    current_choice: str
+    weight: float
+
     def __init__(self, x: int, y: int) -> None:
         """
         Initializes a new Player at position (x, y).
@@ -260,6 +297,10 @@ class World:
     Representation Invariants:
         - ???
     """
+
+    map: list[list[int]]
+    items: list[Item]
+    location: list[Location]
 
     def __init__(self, map_data: TextIO, location_data: TextIO, items_data: TextIO) -> None:
         """
@@ -308,8 +349,8 @@ class World:
         for element in map_raw:
             cur_list = []
             raw_line = element.split()
-            for i in range(0, len(raw_line)):
-                cur_list.append(int(raw_line[i]))
+            for i in raw_line:
+                cur_list.append(int(i))
             the_map.append(cur_list)
         return the_map
 
@@ -361,3 +402,12 @@ class World:
             return None
         else:
             return self.location[self.map[y][x]]
+
+    if __name__ == '__main__':
+        import doctest
+        doctest.testmod(verbose=True)
+
+        import python_ta
+        python_ta.check_all('game_data.py', config={
+            'max-line-length': 120,
+        })
