@@ -58,21 +58,21 @@ def do_action(w: World, p: Player, location: Location) -> None:
                 if get_item == 'y':
                     p.inventory.append(item)
                     item.current_location = -1
-
-        drop_item = input("Would you like to drop an item here? [y/n]")
-        while drop_item != 'y' and drop_item != 'n':
-            drop_item = input("Sorry, please enter 'y' or 'n'. Would you like to drop an item here? [y/n]")
-        while drop_item == 'y':
-            to_be_dropped = input("What would you like to drop? Please type the name exactly as it is displayed.")
-            if to_be_dropped in cur_inventory:
-                for item in p.inventory:
-                    if item.name == to_be_dropped:
-                        p.inventory.remove(item)
-                        item.current_location = location.num
-                        if item.target_position == location.num and not item.point_scored:
-                            p.score += item.target_points
-                            item.point_scored = True
-            drop_item = input("Would you like to drop another item here? [y/n]")
+        if cur_inventory:
+            drop_item = input("Would you like to drop an item here? [y/n]")
+            while drop_item != 'y' and drop_item != 'n':
+                drop_item = input("Sorry, please enter 'y' or 'n'. Would you like to drop an item here? [y/n]")
+            while drop_item == 'y':
+                to_be_dropped = input("What would you like to drop? Please type the name exactly as it is displayed.")
+                if to_be_dropped in cur_inventory:
+                    for item in p.inventory:
+                        if item.name == to_be_dropped:
+                            p.inventory.remove(item)
+                            item.current_location = location.num
+                            if item.target_position == location.num and not item.point_scored:
+                                p.score += item.target_points
+                                item.point_scored = True
+                drop_item = input("Would you like to drop another item here? [y/n]")
 
     elif p.choice == "score":
         print("You currently have " + str(p.score) + " points. The maximum amount of points you can get is 485 points.")
@@ -84,7 +84,7 @@ def do_action(w: World, p: Player, location: Location) -> None:
     elif p.choice == "back":
         if not p.previous_actions:
             print("Sorry, you cannot go back. This is where you started.")
-        if p.previous_actions == [-1]:
+        elif p.previous_actions == [-1]:
             print("Sorry, you cannot go back. "
                   "This is because you took a streetcar to get here. "
                   "To go back, you have to take the streetcar on the other side of the road. "
@@ -155,6 +155,7 @@ if __name__ == "__main__":
             do_action(w, p, location)
         else:
             move(p, location)
+        print(p.score)
 
     if p.total_moves <= 60:
         print("Congratulations! You arrived at the exam on time with everything you need. You won the game!")
