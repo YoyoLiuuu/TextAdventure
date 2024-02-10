@@ -11,7 +11,8 @@ You are in a single-person study room in Robarts Library. The smell of stale cof
 here. There is a whiteboard on the wall and a table in the middle of the room with one chair. There is light coming in
 from a window on the wall opposite the door, and you can see the buildings across the street through it. Your things are
 strewn across the table, completely disordered. You remember coming to Robarts because it's practically beside your
-dorm. There is a garbage can in the corner of the room. You cough, as if you have inhaled a lot of dust.
+dorm. There is a garbage can in the corner of the room. You cough, as if you have inhaled a lot of dust. You remember
+studying for a CSC111 final before dozing off.
 END
 
 LOCATION 1
