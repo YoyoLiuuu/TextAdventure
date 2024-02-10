@@ -28,13 +28,20 @@ from typing import Optional, TextIO
 class Item:
     """An item in our text adventure game world.
 
-
     Instance Attributes:
-        - # TODO
-
+        - name: Name of the item
+        - start_position: Position on grid where item is initially found
+        - target_position: Position on grid where item has to be deposited to get points
+        - target_points: Points recieved for dropping item in current location
+        - current_location: ???
+        - point_scored: States whether the player scored the points
 
     Representation Invariants:
-        - # TODO
+        - self.name != ''
+        - self.start_position >= 0
+        - self.start_position >= 0
+        - self.start_position <= self.target_position
+        - isinstance(self.point_scored, bool)
     """
 
     def __init__(self, name: str, start: int, target: int, target_points: int) -> None:
@@ -63,11 +70,19 @@ class Location:
 
 
     Instance Attributes:
-        - # TODO
-
+        - num: Number associated with the location
+        - points: Points associated with player making it to the location
+        - short: Brief description of the location
+        - long: Long description of the location
+        - map: Coordinates on the map of the location or the whole map?(???)
+        - items: Items available at the location
+        - actions: Available actions at the location
+        - visits: Number of visits to the location
 
     Representation Invariants:
-        - # TODO
+        - self.points >= 0
+        - len(self.long) >= len(self.short)
+        - self.visits >= 0
     """
 
     def __init__(self, num: str, points: str, short: str, long: str, a_map: list[list[int]], items: list[Item]) -> None:
@@ -138,11 +153,20 @@ class Player:
 
 
     Instance Attributes:
-        - # TODO
-
+        - x: X coordinate of location
+        - y: Y coordinate of location
+        - inventory: Items in player's inventory
+        - victory: Boolean of whether the player has won the game or not
+        - score: Player's score
+        - previous_actions: Actions the player has already done
+        - total_moves: Number of moves made by player
+        - current_choice: ???
 
     Representation Invariants:
-        - # TODO
+        - self.x >= 0
+        - self.y >= 0
+        - isinstance(victory, bool)
+        - self.total_moves >= 0
     """
 
     def __init__(self, x: int, y: int) -> None:
@@ -169,12 +193,12 @@ class World:
 
 
     Instance Attributes:
-        - map: a nested list representation of this world's map
-        - # TODO add more instance attributes as needed; do NOT remove the map attribute
-
+        - map: A nested list representation of this world's map
+        - items: Items available
+        - location: All locations in the world
 
     Representation Invariants:
-        - # TODO
+        - ???
     """
 
     def __init__(self, map_data: TextIO, location_data: TextIO, items_data: TextIO) -> None:
