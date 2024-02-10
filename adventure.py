@@ -19,7 +19,7 @@ This file is Copyright (c) 2024 CSC111 Teaching Team
 """
 
 # Note: You may add in other import statements here as needed
-from game_data import World, Item, Location, Player
+from game_data import World, Item1, Item2, Location, Player
 import sys
 
 # Note: You may add helper functions, classes, etc. here as needed
@@ -40,38 +40,58 @@ def move(p: Player, location: Location) -> None:
     p.total_moves += 1
 
 
-def do_action(w: World, p: Player, location: Location) -> None:
+def do_action(w: World, p: Player, cur_location: Location) -> None:
     if p.choice == "look":
-        print(location.long)
+        print(cur_location.long)
     elif p.choice == "inventory":
-        cur_inventory = [item.name for item in p.inventory]
-        if not cur_inventory:
+        current_inventory = [item.get_info() for item in p.inventory]
+        if not current_inventory:
             print("Hmm, it seems that you have nothing in your inventory.")
         else:
             print("Here are the items you have in your inventory:")
-            print(cur_inventory)
+            for item in current_inventory:
+                print(item)
+            print("You are currently carrying " + str(p.weight) + " kg of stuff on you. "
+                                                             "Remember, you can carry up to 1.5 kg of things.")
         for item in w.items:
-            if item.current_location == location.num:
+            if item.current_location == cur_location.num:
                 get_item = ''
                 while get_item != 'y' and get_item != 'n':
-                    get_item = input("There is a " + item.name + " at this location. Would you like to add it to your inventory? [y/n]")
-                if get_item == 'y':
+                    get_item = input("There is a " + item.name +
+                                     " at this location. Would you like to add it to your inventory? [y/n]")
+                if get_item == 'y' and isinstance(item, Item2):
+                    if p.weight + item.weight <= 1.5:
+                        p.weight += item.weight
+                        p.inventory.append(item)
+                        item.current_location = -1
+                    else:
+                        print("You can't get this item! You are carrying too many items with weight. "
+                              "Remember, you can only carry up to 1.5 weigh on you.")
+                elif get_item == 'y' and isinstance(item, Item1):
                     p.inventory.append(item)
                     item.current_location = -1
-        if cur_inventory:
+
+        if current_inventory:
             drop_item = input("Would you like to drop an item here? [y/n]")
             while drop_item != 'y' and drop_item != 'n':
                 drop_item = input("Sorry, please enter 'y' or 'n'. Would you like to drop an item here? [y/n]")
             while drop_item == 'y':
                 to_be_dropped = input("What would you like to drop? Please type the name exactly as it is displayed.")
-                if to_be_dropped in cur_inventory:
+                inventory_names = [item.split()[0].replace(',', '') for item in current_inventory]
+                print(inventory_names)
+                if to_be_dropped in inventory_names:
                     for item in p.inventory:
                         if item.name == to_be_dropped:
                             p.inventory.remove(item)
-                            item.current_location = location.num
-                            if item.target_position == location.num and not item.point_scored:
+                            item.current_location = cur_location.num
+                            if isinstance(item, Item2):
+                                p.weight -= item.weight
+                            if item.target_position == cur_location.num and not item.point_scored:
                                 p.score += item.target_points
                                 item.point_scored = True
+                    current_inventory = [item.get_info() for item in p.inventory]
+                else:
+                    print("Hmm, it looks like you don't have that item in your inventory.")
                 drop_item = input("Would you like to drop another item here? [y/n]")
 
     elif p.choice == "score":
@@ -99,7 +119,7 @@ def do_action(w: World, p: Player, location: Location) -> None:
                 p.choice = 'N'
             else:
                 p.choice = 'S'
-            move(p, location)
+            move(p, cur_location)
             p.previous_actions.pop()
             p.previous_actions.pop()
     else:
@@ -136,7 +156,7 @@ if __name__ == "__main__":
             print(action)
 
         if location.num == 39:
-            cur_inventory = [item.name for item in p.inventory]
+            cur_inventory = [item.get_name() for item in p.inventory]
             if 'LuckyPen' in cur_inventory and 'CheatSheet' in cur_inventory and 'T-Card' in cur_inventory:
                 drop_final_items = input("Congratulations, you've reached the Exam Centre. "
                                          "You have everything you need for this exam. "
@@ -155,7 +175,6 @@ if __name__ == "__main__":
             do_action(w, p, location)
         else:
             move(p, location)
-        print(p.score)
 
     if p.total_moves <= 60:
         print("Congratulations! You arrived at the exam on time with everything you need. You won the game!")

@@ -1,9 +1,8 @@
 0 0 0 Backpack
 31 39 50 LuckyPen
 0 31 10 WaterBottle
-0 6 5 GranolaBar
+0 6 5 GranolaBar 0.1 "The granola bar perfect for perhaps... a stray cat?"
 27 0 0 Wallet
-
 1 1 5 LibraryBook 0.75 "The cover of the book says CSC111: Fundamentals of Computer Science II."
 1 9 10 DormKeycard 0.1 "There is a small 105 scratched into the upper right corner of the card."
 17 18 5 PrestoCard 0.1 "The card says PRESTO on it."

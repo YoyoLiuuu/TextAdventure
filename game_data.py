@@ -25,7 +25,17 @@ This file is Copyright (c) 2024 CSC111 Teaching Team
 """
 from typing import Optional, TextIO
 
+
 class Item:
+    """An item in our text adventure game world.
+    This is an abstract class."""
+
+    def get_info(self) -> str:
+        """Print the main information of this item."""
+        raise NotImplementedError
+
+
+class Item1(Item):
     """An item in our text adventure game world.
 
     Instance Attributes:
@@ -63,6 +73,54 @@ class Item:
         self.target_points = target_points
         self.current_location = start
         self.point_scored = False
+
+    def get_info(self) -> str:
+        return self.name
+
+class Item2(Item):
+    """An item in our text adventure game world.
+    TODO: add more rep invariants and instance attributes
+
+    Instance Attributes:
+        - name: Name of the item
+        - start_position: Position on grid where item is initially found
+        - target_position: Position on grid where item has to be deposited to get points
+        - target_points: Points recieved for dropping item in current location
+        - current_location: ???
+        - point_scored: States whether the player scored the points
+
+    Representation Invariants:
+        - self.name != ''
+        - self.start_position >= 0
+        - self.start_position >= 0
+        - self.start_position <= self.target_position
+        - isinstance(self.point_scored, bool)
+    """
+
+    def __init__(self, name: str, start: int, target: int, target_points: int, weight: float, description: str) -> None:
+        """Initialize a new item.
+        """
+
+        # NOTES:
+        # This is just a suggested starter class for Item.
+        # You may change these parameters and the data available for each Item object as you see fit.
+        # (The current parameters correspond to the example in the handout).
+        # Consider every method in this Item class as a "suggested method".
+        #
+        # The only thing you must NOT change is the name of this class: Item.
+        # All item objects in your game MUST be represented as an instance of this class.
+
+        self.name = name
+        self.start_position = start
+        self.target_position = target
+        self.target_points = target_points
+        self.current_location = start
+        self.point_scored = False
+        self.weight = weight
+        self.description = description
+
+    def get_info(self) -> str:
+        return self.name + ", Weight: " + str(self.weight) + ", Description: " + self.description
 
 
 class Location:
@@ -187,6 +245,7 @@ class Player:
         self.previous_actions = []
         self.total_moves = 0
         self.current_choice = ''
+        self.weight = 0
 
 
 class World:
@@ -260,7 +319,7 @@ class World:
         Location class.
         """
         location_raw = location_data.readlines()
-        the_location = [[] for _ in range(40)]
+        the_location = [[] for _ in range(41)]
         cur_location = 0
         for i in range(len(location_raw)):
             location_raw[i] = location_raw[i][:-1]
@@ -274,6 +333,7 @@ class World:
                 element[-2] += element[-1]
                 element.pop()
             final_location.append(Location(element[0], element[1], element[2], element[3], self.map, self.items))
+        print([item.visits for item in final_location])
         return final_location
 
     def load_items(self, items_data: TextIO) -> list[Item]:
@@ -284,10 +344,12 @@ class World:
         the_items = []
         for element in items_raw:
             item = element.split()
-            while len(item) > 4:
-                item[-2] = item[-2] + item[-1]
-                item.pop()
-            the_items.append(Item(item[3], int(item[0]), int(item[1]), int(item[2])))
+            # different Item child class depending on whether the item has weight and description associated with it
+            if len(item) > 4:
+                item[5] = ' '.join(item[5:])
+                the_items.append(Item2(item[3], int(item[0]), int(item[1]), int(item[2]), float(item[4]), item[5]))
+            else:
+                the_items.append(Item1(item[3], int(item[0]), int(item[1]), int(item[2])))
         return the_items
 
     # NOTE: The method below is REQUIRED. Complete it exactly as specified.
