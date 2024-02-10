@@ -23,23 +23,38 @@ from game_data import World, Item, Location, Player
 
 # Note: You may add helper functions, classes, etc. here as needed
 
+def do_action(w: World, p: Player, location: Location, choice: str) -> None:
+    if choice not in location.available_actions():
+        print("Sorry! You can't go that way!")
+    elif choice == 'N':
+        p.y -= 1
+    elif choice == 'S':
+        p.y += 1
+    elif choice == 'W':
+        p.x -= 1
+    elif choice == 'E':
+        p.x += 1
+
+
 # Note: You may modify the code below as needed; the following starter template are just suggestions
 if __name__ == "__main__":
     w = World(open("map.txt"), open("locations.txt"), open("items.txt"))
-    p = Player(0, 0)  # set starting location of player; you may change the x, y coordinates here as appropriate
+    p = Player(1, 3)  # set starting location of player; you may change the x, y coordinates here as appropriate
 
     menu = ["look", "inventory", "score", "quit", "back"]
 
     while not p.victory:
         location = w.get_location(p.x, p.y)
 
-        # TODO: ENTER CODE HERE TO PRINT LOCATION DESCRIPTION
-        # Depending on whether or not it's been visited before,
-        # print either full description (first time visit) or brief description (every subsequent visit)
+        if location.visits > 0:
+            print(location.short)
+        else:
+            print(location.long)
+        location.visits += 1
 
         print("What to do? \n")
         print("[menu]")
-        for action in location.available_actions():
+        for action in location.actions:
             print(action)
         choice = input("\nEnter action: ")
 
@@ -48,6 +63,8 @@ if __name__ == "__main__":
             for option in menu:
                 print(option)
             choice = input("\nChoose action: ")
+
+        do_action(w, p, location, choice)
 
         # TODO: CALL A FUNCTION HERE TO HANDLE WHAT HAPPENS UPON THE PLAYER'S CHOICE
         #  REMEMBER: the location = w.get_location(p.x, p.y) at the top of this loop will update the location if

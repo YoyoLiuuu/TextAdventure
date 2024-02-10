@@ -75,14 +75,14 @@ class Location:
 
         # TODO Add more details here about the initialization if needed
         """
-        self.num = num
+        self.num = int(num[-1])
         self.points = int(points)
         self.short = short
         self.long = long
-        self.actions = self.available_actions(int(num[-1]), a_map)
-        self.items = self.get_items(int(num[-1]), items)
+        self.map = a_map
+        self.items = self.get_items(items)
+        self.actions = self.available_actions()
         self.visits = 0
-        self.map = map
 
         # NOTES:
         # Data that could be associated with each Location object:
@@ -99,36 +99,36 @@ class Location:
         #
         # The only thing you must NOT change is the name of this class: Location.
         # All locations in your game MUST be represented as an instance of this class.
+    def get_items(self, items) -> list:
+        """docstring"""
+        items_at_location = []
+        for item in items:
+            if item.current_location == self.num:
+                items_at_location.append(item)
+        return items_at_location
 
-    def available_actions(self, location_num: int, game_map: list[list[int]]) -> list[str]:
+    def available_actions(self) -> list[str]:
         """
         Return the available actions in this location.
         The actions should depend on the items available in the location
         and the x,y position of this location on the world map.
         """
-        for y in range(len(game_map)):
-            for x in range(len(game_map[0])):
-                if game_map[y][x] == location_num:
+        loc_x, loc_y = -1, -1
+        for y in range(len(self.map)):
+            for x in range(len(self.map[0])):
+                if self.map[y][x] == self.num:
                     loc_x = x
                     loc_y = y
         moves = []
-        if loc_y >= 1 and game_map[loc_y - 1][loc_x] != -1:
+        if loc_y >= 1 and self.map[loc_y - 1][loc_x] != -1:
             moves.append('N')
-        if loc_y <= len(game_map) - 2 and game_map[loc_y + 1][loc_x] != -1:
+        if loc_y <= len(self.map) - 2 and self.map[loc_y + 1][loc_x] != -1:
             moves.append('S')
-        if loc_x >= 1 and game_map[loc_y][loc_x - 1] != -1:
+        if loc_x >= 1 and self.map[loc_y][loc_x - 1] != -1:
             moves.append('W')
-        if loc_x <= len(game_map) - 2 and game_map[loc_y][loc_x + 1] != -1:
+        if loc_x <= len(self.map) - 2 and self.map[loc_y][loc_x + 1] != -1:
             moves.append('E')
         return moves
-
-    def get_items(self, location_num: int, items: list[Item]) -> list:
-        """docstring"""
-        items_at_location = []
-        for item in items:
-            if item.current_location == location_num:
-                items_at_location.append(item)
-        return items_at_location
 
 
 class Player:
