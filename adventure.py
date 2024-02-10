@@ -23,7 +23,8 @@ from game_data import World, Item, Location, Player
 
 # Note: You may add helper functions, classes, etc. here as needed
 
-def do_action(w: World, p: Player, location: Location, choice: str) -> None:
+
+def move(p: Player, location: Location, choice: str) -> None:
     if choice not in location.available_actions():
         print("Sorry! You can't go that way!")
     elif choice == 'N':
@@ -34,6 +35,47 @@ def do_action(w: World, p: Player, location: Location, choice: str) -> None:
         p.x -= 1
     elif choice == 'E':
         p.x += 1
+
+
+def do_action(w: World, p: Player, location: Location, choice: str) -> None:
+    if choice == "look":
+        print(location.long)
+    elif choice == "inventory":
+        cur_inventory = [item.name for item in p.inventory]
+        if not cur_inventory:
+            print("Hmm, it seems that you have nothing in your inventory.")
+        else:
+            print("Here are the items you have in your inventory:")
+            print(cur_inventory)
+        for item in w.items:
+            if item.current_location == location.num:
+                get_item = ''
+                while get_item != 'y' and get_item != 'n':
+                    get_item = input("There is a " + item.name + " at this location. Would you like to add it to your inventory? [y/n]")
+                if get_item == 'y':
+                    p.inventory.append(item)
+                    item.current_location = -1
+
+        drop_item = input("Would you like to drop an item here? [y/n]")
+        while drop_item != 'y' and drop_item != 'n':
+            drop_item = input("Sorry, please enter 'y' or 'n'. Would you like to drop an item here? [y/n]")
+        while drop_item == 'y':
+            to_be_dropped = input("What would you like to drop? Please type the name exactly as it is displayed.")
+            if to_be_dropped in cur_inventory:
+                for item in p.inventory:
+                    if item.name == to_be_dropped:
+                        p.inventory.remove(item)
+                        item.current_location = location.num
+            drop_item = input("Would you like to drop another item here? [y/n]")
+
+    elif choice == "score":
+        t = 0
+    elif choice == "quit":
+        t = 0
+    elif choice == "back":
+        t = 0
+    else:
+        t = 0
 
 
 # Note: You may modify the code below as needed; the following starter template are just suggestions
@@ -63,8 +105,9 @@ if __name__ == "__main__":
             for option in menu:
                 print(option)
             choice = input("\nChoose action: ")
+            do_action(w, p, location, choice)
 
-        do_action(w, p, location, choice)
+        move(p, location, choice)
 
         # TODO: CALL A FUNCTION HERE TO HANDLE WHAT HAPPENS UPON THE PLAYER'S CHOICE
         #  REMEMBER: the location = w.get_location(p.x, p.y) at the top of this loop will update the location if
