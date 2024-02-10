@@ -74,7 +74,7 @@ class Location:
         - points: Points associated with player making it to the location
         - short: Brief description of the location
         - long: Long description of the location
-        - map: Coordinates on the map of the location or the whole map?(???)
+        - map: Nested list respresentation of the whole map
         - items: Items available at the location
         - actions: Available actions at the location
         - visits: Number of visits to the location
@@ -149,7 +149,7 @@ class Location:
 
 class Player:
     """
-    A Player in the text advanture game.
+    A Player in the text adventure game.
 
 
     Instance Attributes:
@@ -160,7 +160,7 @@ class Player:
         - score: Player's score
         - previous_actions: Actions the player has already done
         - total_moves: Number of moves made by player
-        - current_choice: ???
+        - current_choice: String representation of what player chooses to do next
 
     Representation Invariants:
         - self.x >= 0
