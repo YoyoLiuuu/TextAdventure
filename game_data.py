@@ -89,7 +89,6 @@ class Location:
         """Initialize a new location.
 
 
-        # TODO Add more details here about the initialization if needed
         """
         self.num = int(num[-1])
         self.points = int(points)
@@ -116,7 +115,9 @@ class Location:
         # The only thing you must NOT change is the name of this class: Location.
         # All locations in your game MUST be represented as an instance of this class.
     def get_items(self, items) -> list:
-        """docstring"""
+        """
+        Goes through all items and returns a list of the items available at the specific location
+        """
         items_at_location = []
         for item in items:
             if item.current_location == self.num:
@@ -255,7 +256,8 @@ class World:
 
     def load_location(self, location_data: TextIO) -> list[Location]:
         """
-        COME BACK TO IT.
+        Reads in locations.txt and returns a list of the locations available in the map where each element is of the
+        Location class.
         """
         location_raw = location_data.readlines()
         the_location = [[] for _ in range(40)]
@@ -275,6 +277,9 @@ class World:
         return final_location
 
     def load_items(self, items_data: TextIO) -> list[Item]:
+        """
+        Reads in the items.txt file and returns a list of the items where each element is of the Item class.
+        """
         items_raw = items_data.readlines()
         the_items = []
         for element in items_raw:
