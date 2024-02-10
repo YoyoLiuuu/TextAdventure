@@ -132,7 +132,7 @@ class Location:
         - points: Points associated with player making it to the location
         - short: Brief description of the location
         - long: Long description of the location
-        - map: Coordinates on the map of the location or the whole map?(???)
+        - map: Nested list respresentation of the whole map
         - items: Items available at the location
         - actions: Available actions at the location
         - visits: Number of visits to the location
@@ -147,7 +147,6 @@ class Location:
         """Initialize a new location.
 
 
-        # TODO Add more details here about the initialization if needed
         """
         self.num = int(num[-2:])
         self.points = int(points)
@@ -174,7 +173,9 @@ class Location:
         # The only thing you must NOT change is the name of this class: Location.
         # All locations in your game MUST be represented as an instance of this class.
     def get_items(self, items) -> list:
-        """docstring"""
+        """
+        Goes through all items and returns a list of the items available at the specific location
+        """
         items_at_location = []
         for item in items:
             if item.current_location == self.num:
@@ -207,7 +208,7 @@ class Location:
 
 class Player:
     """
-    A Player in the text advanture game.
+    A Player in the text adventure game.
 
 
     Instance Attributes:
@@ -218,7 +219,7 @@ class Player:
         - score: Player's score
         - previous_actions: Actions the player has already done
         - total_moves: Number of moves made by player
-        - current_choice: ???
+        - current_choice: String representation of what player chooses to do next
 
     Representation Invariants:
         - self.x >= 0
@@ -314,7 +315,8 @@ class World:
 
     def load_location(self, location_data: TextIO) -> list[Location]:
         """
-        COME BACK TO IT.
+        Reads in locations.txt and returns a list of the locations available in the map where each element is of the
+        Location class.
         """
         location_raw = location_data.readlines()
         the_location = [[] for _ in range(41)]
@@ -334,6 +336,9 @@ class World:
         return final_location
 
     def load_items(self, items_data: TextIO) -> list[Item]:
+        """
+        Reads in the items.txt file and returns a list of the items where each element is of the Item class.
+        """
         items_raw = items_data.readlines()
         the_items = []
         for element in items_raw:

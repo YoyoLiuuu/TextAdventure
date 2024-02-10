@@ -2,9 +2,9 @@ LOCATION 00
 0
 You are in a study room in Robarts Library.
 You are in a single-person study room in Robarts Library. The smell of stale coffee is in the air. It's very quiet in
-here. There is a whiteboard on the wall and a table in the middle of the room with one chair. There is light coming in
+ here. There is a whiteboard on the wall and a table in the middle of the room with one chair. There is light coming in
 from a window on the wall opposite the door, and you can see the buildings across the street through it. Your things are
-strewn across the table, completely disordered. You remember coming to Robarts because it's practically beside your
+ strewn across the table, completely disordered. You remember coming to Robarts because it's practically beside your
 dorm. There is a garbage can in the corner of the room. You cough, as if you have inhaled a lot of dust. You remember
 studying for a CSC111 final before dozing off.
 END
@@ -13,8 +13,8 @@ LOCATION 01
 You are in the book section of Robarts library.
 Outside the study room in Robarts that you woke up in is a book section. Specifically, it holds all the course material
 for computer science classes. There are two bookshelves facing each other that are filled with course textbooks covering
-different courses, programs years, and difficulty. The book closest to you is for CSC108 and the book farthest is for
-CSC496. There are two books slightly sticking out from the rest. Odd. The librarians are usualy very neat. Yet, the
+ different courses, programs years, and difficulty. The book closest to you is for CSC108 and the book farthest is for
+ CSC496. There are two books slightly sticking out from the rest. Odd. The librarians are usualy very neat. Yet, the
 books look untouched, as if a cloud of dust will come out of them if opened.
 END
 LOCATION 02
@@ -50,7 +50,7 @@ LOCATION 06
 You are outside Robarts facing St. George Street.
 You are outside Robarts Library facing St. George Street. There are cars passing by on the road and a large crowd of
 students with backpacks on bustling to get to their next class. Everyone looks like they have a place to be. This street
-is very busy during the school day due to the high volume of university buildings, coffee shops, and restaurants on it.
+ is very busy during the school day due to the high volume of university buildings, coffee shops, and restaurants on it.
 You hear a low hiss towards your right.
 END
 LOCATION 07
@@ -71,7 +71,7 @@ LOCATION 09
 1
 You are outside your dorm building.
 You are outside your dorm building. There is a glass door in front of you, and through it, you can see a hallway of dorm
-rooms and two elevators on the right side. There is a key swiper to the left of the door with a red light blinking on
+ rooms and two elevators on the right side. There is a key swiper to the left of the door with a red light blinking on
 it.
 END
 LOCATION 10
@@ -84,8 +84,8 @@ LOCATION 11
 10
 You are standing in your dorm's hallway.
 You are standing in your dorm's hallway. The door leading to the outside is to the south. The elevators are to the east.
-In front of you, there are dorm rooms. The ones on the right have odd numbers starting at 101. You hear light chattering
-coming from a room up ahead on the left. The door is open.
+ In front of you, there are dorm rooms. The ones on the right have odd numbers starting at 101. You hear light
+ chattering coming from a room up ahead on the left. The door is open.
 END
 LOCATION 12
 0
@@ -111,7 +111,7 @@ Location 15
 You are inside your dorm room.
 You are at the entrance of your dorm room. Evidence of a tired and overworked university student is everywhere. There's
 an unmade bed pushed to the wall, and a disorganized desk. The desk has 3 drawers. The walls are covered in posters from
-movies and video games. The curtains are drawn shut and the door to the closet is open, revealing a messy closet and
+ movies and video games. The curtains are drawn shut and the door to the closet is open, revealing a messy closet and
 dirty clothes haphazardly thrown on closet floor.
 END
 LOCATION 16
@@ -132,7 +132,7 @@ LOCATION 18
 You are on the street in front of your dorm.
 You are on the street in front of your dorm. The street is bustling with the sounds of students talking and cars
 honking. The streetcar is waiting with its doors open in front of you. The bus driver is looking at you. There is a card
-tapping machine on the door of the streetcar. People in the streetcar are looking at you expectantly.
+ tapping machine on the door of the streetcar. People in the streetcar are looking at you expectantly.
 END
 LOCATION 19
 10
@@ -166,7 +166,7 @@ LOCATION 23
 You are in the ROM's foyer.
 You are in the ROM's foyer. There are more securtity guards roaming here, helping visitors find the exhibitions they
 want to see. All of the guards are wearing the same uniform and there is a jingling noise coming from the security guard
-closest to you. You realize that it's keeping from his keyring that has multiple keys on it, and it is making noise as
+ closest to you. You realize that it's keeping from his keyring that has multiple keys on it, and it is making noise as
 he moves his arms, showing someone directions. You see a security guard coming from the south side of the foyer, and he
 is reattaching the keyring to his belt.
 END
@@ -208,15 +208,15 @@ LOCATION 29
 1
 You are in front of Cafe Victoria, a coffee shop.
 You are in front of Cafe Victoria, a coffee shop on Bloor St. It is a vibrant pink colour and the name of the stop is in
-pastel blue. It seems geared towards younger populations. Indeed, there are streams of university students going in and
-out of the coffee shop.
+ pastel blue. It seems geared towards younger populations. Indeed, there are streams of university students going in and
+ out of the coffee shop.
 END
 LOCATION 30
 15
 You are inside Cafe Victoria.
 You are inside Cafe Victoria. There is a comfortable booth to the right of you. It has a reciept for a recent order on
 it. There are about 10 tables in the shop and 7 of them are occupied by studying students. There is a long line to order
-coffee. There is another door leading to the outside of the coffee shop on the far end of the cafe.
+ coffee. There is another door leading to the outside of the coffee shop on the far end of the cafe.
 END
 LOCATION 31
 9
@@ -260,7 +260,7 @@ LOCATION 37
 40
 You are in the exam room on the main floor.
 You are in the exam room on the main floor of the exam centre. You see a friend in front of you waving you towards them,
-pointing to an empty desk beside them.
+ pointing to an empty desk beside them.
 END
 LOCATION 38
 0
