@@ -137,7 +137,7 @@ if __name__ == "__main__":
 
         if location.num == 39:
             cur_inventory = [item.name for item in p.inventory]
-            if 'Lucky Pen' in cur_inventory and 'Cheat Sheet' in cur_inventory and 'T-Card' in cur_inventory:
+            if 'LuckyPen' in cur_inventory and 'CheatSheet' in cur_inventory and 'T-Card' in cur_inventory:
                 drop_final_items = input("Congratulations, you've reached the Exam Centre. "
                                          "You have everything you need for this exam. "
                                          "Please drop your Lucky Pen, Cheat Sheet and T-Card from your inventory. ")
