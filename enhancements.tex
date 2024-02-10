@@ -6,7 +6,7 @@
 \usepackage[margin=0.75in]{geometry}
 
 \title{CSC111 Winter 2024 Project 1}
-\author{TODO: FILL IN YOUR NAME(S) HERE}
+\author{Yoyo Liu and Manahill Sajid}
 \date{\today}
 
 \begin{document}
@@ -20,19 +20,22 @@
 \item Describe your enhancement \#1 here
 	\begin{itemize}
 	\item Brief description of what the enhancement is (if it's a puzzle, also describe what steps the player must take to solve it):
+    \\ We have included a back command allowing players to undo their last action. For example, going back to their last location. This is helpful for players who believe they made a mistake in the game.
 	\item Complexity level (choose from low/medium/high):
+    \\ We believe this is a high complexity level.
 	\item Reasons you believe this is the complexity level (e.g. mention implementation details, how much code did you have to add/change from the baseline, what challenges did you face, etc.)
-	% Feel free to add more subheadings if you need
+	 \\We think this has a high complexity level because we have to keep track of every action that the player makes, whether it's going to a new location or doing something with an item and then go to the element of the list and take them back there. The hard part to implement was undoing the action they did since there's so many possible actions. We had to create a new variable to store the actions and update it everytime the player did something new.
 	\end{itemize}
 
-% Uncomment below section if you have more enhancements; copy-paste as many times as needed
-%\item Describe your enhancement here
-%	\begin{itemize}
-%	\item Basic description of what the enhancement is:
-%	\item Complexity level (low/medium/high):
-%	\item Reasons you believe this is the complexity level (e.g. mention implementation details 
-%	% Feel free to add more subheadings if you feel the need
-%	\end{itemize}
+\item Describe your enhancement \#2 here
+	\begin{itemize}
+	\item Brief description of what the enhancement is (if it's a puzzle, also describe what steps the player must take to solve it):
+    \\ In order to include inheritance in our game, we chose to make an Item parent class with two children; one with items that have no weight and one with items that have weight. This was then used to impose a weight limit on the player of how much they can carry.
+	\item Complexity level (choose from low/medium/high):
+    \\ Medium/high complexity level
+	\item Reasons you believe this is the complexity level (e.g. mention implementation details, how much code did you have to add/change from the baseline, what challenges did you face, etc.)
+	\\ Inheritance is something we are both new to and it was not covered in depth during lecture so we had to do outside research to figure out how to do inheritance. Not only did we have to create two different classes for items, we also had to add the weight restriction. We did this by splitting our items into two groups in items.txt; one that had a weight (Item2) and one with no weight (Item1). Every time a player picked something up we had to check if that item has weight, and if it did, add it to the total weight they're carrying. If they exceed the capacity, we have to give them an error message. Similarly, when they drop an item we have to subtract it weight from the weight they're carrying (if it is from Item2). Since the code had to be drastically changed for this implementation, we think it is complex.
+	\end{itemize}
 
 \end{enumerate}
 
