@@ -55,6 +55,7 @@ class Item:
         self.target_position = target
         self.target_points = target_points
         self.current_location = start
+        self.point_scored = False
 
 
 class Location:
@@ -157,6 +158,10 @@ class Player:
         self.y = y
         self.inventory = []
         self.victory = False
+        self.score = 0
+        self.previous_actions = []
+        self.total_moves = 0
+        self.current_choice = ''
 
 
 class World:

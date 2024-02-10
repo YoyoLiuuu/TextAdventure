@@ -20,27 +20,30 @@ This file is Copyright (c) 2024 CSC111 Teaching Team
 
 # Note: You may add in other import statements here as needed
 from game_data import World, Item, Location, Player
+import sys
 
 # Note: You may add helper functions, classes, etc. here as needed
 
 
-def move(p: Player, location: Location, choice: str) -> None:
-    if choice not in location.available_actions():
+def move(p: Player, location: Location) -> None:
+    if p.choice not in location.available_actions():
         print("Sorry! You can't go that way!")
-    elif choice == 'N':
+    elif p.choice == 'N':
         p.y -= 1
-    elif choice == 'S':
+    elif p.choice == 'S':
         p.y += 1
-    elif choice == 'W':
+    elif p.choice == 'W':
         p.x -= 1
-    elif choice == 'E':
+    elif p.choice == 'E':
         p.x += 1
+    p.previous_actions.append(p.choice)
+    p.total_moves += 1
 
 
-def do_action(w: World, p: Player, location: Location, choice: str) -> None:
-    if choice == "look":
+def do_action(w: World, p: Player, location: Location) -> None:
+    if p.choice == "look":
         print(location.long)
-    elif choice == "inventory":
+    elif p.choice == "inventory":
         cur_inventory = [item.name for item in p.inventory]
         if not cur_inventory:
             print("Hmm, it seems that you have nothing in your inventory.")
@@ -66,16 +69,41 @@ def do_action(w: World, p: Player, location: Location, choice: str) -> None:
                     if item.name == to_be_dropped:
                         p.inventory.remove(item)
                         item.current_location = location.num
+                        if item.target_position == location.num and not item.point_scored:
+                            p.score += item.target_points
+                            item.point_scored = True
             drop_item = input("Would you like to drop another item here? [y/n]")
 
-    elif choice == "score":
-        t = 0
-    elif choice == "quit":
-        t = 0
-    elif choice == "back":
-        t = 0
+    elif p.choice == "score":
+        print("You currently have " + str(p.score) + " points. The maximum amount of points you can get is 485 points.")
+    elif p.choice == "quit":
+        confirm = input("Are you sure you want to quit? [y/n]")
+        if confirm == 'y':
+            print("Thank you for playing. Goodbye.")
+            sys.exit()
+    elif p.choice == "back":
+        if not p.previous_actions:
+            print("Sorry, you cannot go back. This is where you started.")
+        if p.previous_actions == [-1]:
+            print("Sorry, you cannot go back. "
+                  "This is because you took a streetcar to get here. "
+                  "To go back, you have to take the streetcar on the other side of the road. "
+                  "However, that streetcar back is not arriving anytime soon.")
+        else:
+            previous_action = p.previous_actions[-1]
+            if previous_action == 'E':
+                p.choice = 'W'
+            elif previous_action == 'W':
+                p.choice = 'E'
+            elif previous_action == 'S':
+                p.choice = 'N'
+            else:
+                p.choice = 'S'
+            move(p, location)
+            p.previous_actions.pop()
+            p.previous_actions.pop()
     else:
-        t = 0
+        print("Sorry, that is not a valid choice.")
 
 
 # Note: You may modify the code below as needed; the following starter template are just suggestions
@@ -84,38 +112,57 @@ if __name__ == "__main__":
     p = Player(1, 3)  # set starting location of player; you may change the x, y coordinates here as appropriate
 
     menu = ["look", "inventory", "score", "quit", "back"]
-
     while not p.victory:
         location = w.get_location(p.x, p.y)
+
+        if p.total_moves >= 60:
+            print("You've reached the maximum number of moves. You lost the game."
+                  "However, feel free to continue exploring the map and reach your destination.")
 
         if location.visits > 0:
             print(location.short)
         else:
             print(location.long)
+            p.score += location.points
+
         location.visits += 1
+
+        if location.num == 20:
+            p.previous_actions = [-1]
 
         print("What to do? \n")
         print("[menu]")
         for action in location.actions:
             print(action)
-        choice = input("\nEnter action: ")
 
-        if choice == "[menu]":
+        if location.num == 39:
+            cur_inventory = [item.name for item in p.inventory]
+            if 'Lucky Pen' in cur_inventory and 'Cheat Sheet' in cur_inventory and 'T-Card' in cur_inventory:
+                drop_final_items = input("Congratulations, you've reached the Exam Centre. "
+                                         "You have everything you need for this exam. "
+                                         "Please drop your Lucky Pen, Cheat Sheet and T-Card from your inventory. ")
+                p.victory = True
+
+        p.choice = input("\nEnter action: ")
+
+        if p.choice == "[menu]":
             print("Menu Options: \n")
             for option in menu:
                 print(option)
-            choice = input("\nChoose action: ")
-            do_action(w, p, location, choice)
+            p.choice = input("\nChoose action: ")
 
-        move(p, location, choice)
+        if p.choice in menu:
+            do_action(w, p, location)
+        else:
+            move(p, location)
 
-        # TODO: CALL A FUNCTION HERE TO HANDLE WHAT HAPPENS UPON THE PLAYER'S CHOICE
-        #  REMEMBER: the location = w.get_location(p.x, p.y) at the top of this loop will update the location if
-        #  the choice the player made was just a movement, so only updating player's position is enough to change the
-        #  location to the next appropriate location
-        #  Possibilities:
-        #  A helper function such as do_action(w, p, location, choice)
-        #  OR A method in World class w.do_action(p, location, choice)
-        #  OR Check what type of action it is, then modify only player or location accordingly
-        #  OR Method in Player class for move or updating inventory
-        #  OR Method in Location class for updating location item info, or other location data etc....
+    if p.total_moves <= 60:
+        print("Congratulations! You arrived at the exam on time with everything you need. You won the game!")
+        print("Your total score is " + str(p.score) + ", " + str(485 - p.score) +
+              " points away from the maximum score you can get")
+        print("Thanks for playing the game! Have a nice day!")
+    else:
+        print("You are sitting on your desk, the examiner comes and looks at your T-Card..."
+              "Unfortunately, you spent way too much time finding your lost stuff, and you missed your exam!"
+              "The exam you are sitting at is in fact a second year HPS exam... Oh no."
+              "Ugh, how unfortunate. Better luck next time!")
