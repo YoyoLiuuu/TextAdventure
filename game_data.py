@@ -87,7 +87,6 @@ class Item1(Item):
 
 class Item2(Item):
     """An item in our text adventure game world.
-    TODO: add more rep invariants and instance attributes
 
     Instance Attributes:
         - name: Name of the item
@@ -104,6 +103,7 @@ class Item2(Item):
         - self.start_position >= 0
         - self.start_position <= self.target_position
         - isinstance(self.point_scored, bool)
+        - self.weight > 0
     """
 
     name: str
@@ -408,6 +408,6 @@ class World:
         doctest.testmod(verbose=True)
 
         import python_ta
-        python_ta.check_all('game_data.py', config={
+        python_ta.check_all('adventure.py', config={
             'max-line-length': 120,
         })

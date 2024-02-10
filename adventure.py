@@ -22,10 +22,15 @@ This file is Copyright (c) 2024 CSC111 Teaching Team
 from game_data import World, Item1, Item2, Location, Player
 import sys
 
+
 # Note: You may add helper functions, classes, etc. here as needed
 
 
 def move(p: Player, location: Location) -> None:
+    """
+    This functions allows players to move around the map and gives them an error if they try to go to a non-existent
+    location
+    """
     if p.choice not in location.available_actions():
         print("Sorry! You can't go that way!")
     elif p.choice == 'N':
@@ -41,6 +46,10 @@ def move(p: Player, location: Location) -> None:
 
 
 def do_action(w: World, p: Player, cur_location: Location) -> None:
+    """
+    Performs the function that players want to do or tells them it's not possible. Possible actions include looking in
+    inventory, looking at items in a location, dropping an item, going back, and checking the player score.
+    """
     if p.choice == "look":
         print(cur_location.long)
     elif p.choice == "inventory":
@@ -52,13 +61,14 @@ def do_action(w: World, p: Player, cur_location: Location) -> None:
             for item in current_inventory:
                 print(item)
             print("You are currently carrying " + str(p.weight) + " kg of stuff on you. "
-                                                             "Remember, you can carry up to 1.5 kg of things.")
+                                                                  "Remember, you can carry up to 1.5 kg of things.")
         for item in w.items:
             if item.current_location == cur_location.num:
                 get_item = ''
                 while get_item != 'y' and get_item != 'n':
-                    get_item = input("There is a " + item.name +
-                                     " at this location. Would you like to add it to your inventory? [y/n]")
+                    get_item = input(
+                        "There is a " + item.name + " at this location."
+                                                    "Would you like to add it to your inventory? [y/n]")
                 if get_item == 'y' and isinstance(item, Item2):
                     if p.weight + item.weight <= 1.5:
                         p.weight += item.weight
@@ -187,11 +197,22 @@ if __name__ == "__main__":
 
     if p.total_moves <= 60:
         print("Congratulations! You arrived at the exam on time with everything you need. You won the game!")
-        print("Your total score is " + str(p.score) + ", " + str(485 - p.score) +
-              " points away from the maximum score you can get")
+        print("Your total score is " + str(p.score) + ", " + str(485 - p.score) + " points away from the maximum score "
+                                                                                  "you can get")
         print("Thanks for playing the game! Have a nice day!")
     else:
         print("You are sitting on your desk, the examiner comes and looks at your T-Card..."
               "Unfortunately, you spent way too much time finding your lost stuff, and you missed your exam!"
               "The exam you are sitting at is in fact a second year HPS exam... Oh no."
               "Ugh, how unfortunate. Better luck next time!")
+
+    if __name__ == '__main__':
+        import doctest
+
+        doctest.testmod(verbose=True)
+
+        import python_ta
+
+        python_ta.check_all('adventure.py', config={
+            'max-line-length': 120,
+        })
