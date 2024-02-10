@@ -1,14 +1,15 @@
-0 0 0 Backpack 0
-0 31 10 Water Bottle 1
-0 6 5 Granola Bar 0.25
-1 1 5 Library Book 0.75 "The cover of the book says CSC111: Fundamentals of Computer Science II."
-1 9 10 Dorm Keycard 0.1 "There is a small 105 scratched into the upper right corner of the card."
-17 18 5 Presto Card 0.1 "The card says PRESTO on it."
-14 22 10 ROM Ticket 0.1 "The words two-day ticket are written big on the top, and yesterday's date is stamped on."
-19 39 50 Cheat Sheet 0.3 "The title of the page says CSC11: Final Exam Cheat Sheet"
-14 14 5 Coffee Cup 0.4 "The words Cafe Victoria is printed onto the cup."
-30 31 0 Coffee Reciept 0.1 "The reciept is for a $3.99 brewed coffee"
-31 39 50 Lucky Pen 0.3
-23 27 10 Security Guard's Keys 0.7 "Has a small keychain with the words 'ROM Security' written on it"
-27 0 0 Wallet 0.6
-25 39 50 T-Card 0.2 'Says your name, uTorID, and has a picture of you'
+0 0 0 Backpack
+31 39 50 LuckyPen
+0 31 10 WaterBottle
+0 6 5 GranolaBar
+27 0 0 Wallet
+
+1 1 5 LibraryBook 0.75 "The cover of the book says CSC111: Fundamentals of Computer Science II."
+1 9 10 DormKeycard 0.1 "There is a small 105 scratched into the upper right corner of the card."
+17 18 5 PrestoCard 0.1 "The card says PRESTO on it."
+14 22 10 ROMTicket 0.1 "The words two-day ticket are written big on the top, and yesterday's date is stamped on."
+19 39 50 CheatSheet 0.3 "The title of the page says CSC11: Final Exam Cheat Sheet"
+14 14 5 CoffeeCup 0.4 "The words Cafe Victoria is printed onto the cup."
+30 31 0 CoffeeReceipt 0.1 "The receipt is for a $3.99 brewed coffee"
+23 27 10 SecurityGuardKeys 0.7 "Has a small keychain with the words 'ROM Security' written on it"
+25 39 50 T-Card 0.2 "Says your name, uTorID, and has a picture of you"
