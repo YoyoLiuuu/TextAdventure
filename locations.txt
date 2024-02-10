@@ -1,4 +1,4 @@
-LOCATION 0
+LOCATION 00
 0
 You are in a study room in Robarts Library.
 You are in a single-person study room in Robarts Library. The smell of stale coffee is in the air. It's very quiet in
@@ -8,7 +8,7 @@ from a window on the wall opposite the door, and you can see the buildings acros
 dorm. There is a garbage can in the corner of the room. You cough, as if you have inhaled a lot of dust. You remember
 studying for a CSC111 final before dozing off.
 END
-LOCATION 1
+LOCATION 01
 0
 You are in the book section of Robarts library.
 Outside the study room in Robarts that you woke up in is a book section. Specifically, it holds all the course material
@@ -17,35 +17,35 @@ for computer science classes. There are two bookshelves facing each other that a
  CSC496. There are two books slightly sticking out from the rest. Odd. The librarians are usualy very neat. Yet, the
 books look untouched, as if a cloud of dust will come out of them if opened.
 END
-LOCATION 2
+LOCATION 02
 1
 You are in the hallway in Robarts.
 You are in a hallway leading to the front of Robarts library. You can hear some chattering coming from in front of you.
 The front desk phone ringing, and you can hear the shuffling of whispering students coming into the library. Behind you
 is complete silence and you can smell the faint scent of paper.
 END
-LOCATION 3
+LOCATION 03
 1
 You are at the front desk of Robarts library.
 There is a large desk in front of you and someone is sitting behind the desk and wearing a badge that says 'librarian
 helper'. They are on a computer. There is a large box beside the desk with the word 'lost and found' on it. The
 librarian helper smiles at you and asks if there's anything they can do to help you.
 END
-LOCATION 4
+LOCATION 04
 10
 You are in front of Robart's lost and found box.
 You are in front of Robart's lost and found box. It is beside the reception desk. It is a big blue box with a paper
 stuck to it that says "LOST AND FOUND". You can see some things poking out of it, but nothing that looks familiar.
 There's a musty smell coming out of the box, as if someone left their gym clothes in there and never came back for them.
 END
-LOCATION 5
+LOCATION 05
 2
 You are on the interior side Robart's front door.
 You are standing right at the entrance of Robarts with the door in front of you. The only noise you hear is the quiet
 shuffling of papers and the sound of traffic seeping through the cracks of the door from the outside street. There is a
 bit of a chill coming through when the door gets opened.
 END
-LOCATION 6
+LOCATION 06
 3
 You are outside Robarts facing St. George Street.
 You are outside Robarts Library facing St. George Street. There are cars passing by on the road and a large crowd of
@@ -53,21 +53,21 @@ students with backpacks on bustling to get to their next class. Everyone looks l
  is very busy during the school day due to the high volume of university buildings, coffee shops, and restaurants on it.
 You hear a low hiss towards your right.
 END
-LOCATION 7
+LOCATION 07
 0
 You are standing in front of a food truck.
 You are standing in front of a food truck near Robarts. The truck is bright red and has a giant picture of a chicken on
 it. You can smell the fried chicken goodness and out of nowhere, your stomach starts growling. There is no one waiting
 to order so the cook in the truck looks at you expectantly, waiting for you to order.
 END
-LOCATION 8
+LOCATION 08
 5
 You are near the university buildings on St. George Street.
 You are standing on St. George Street near Robarts library. There is a lot of traffic both on the road and on the
 sidewalk. You look down the road and across to see that you are in area where most dormitory buildings are. There's
 Morrison Hall in front of you and Innis College down the street.
 END
-LOCATION 9
+LOCATION 09
 1
 You are outside your dorm building.
 You are outside your dorm building. There is a glass door in front of you, and through it, you can see a hallway of dorm
@@ -145,7 +145,7 @@ END
 LOCATION 20
 0
 You are where the streetcar comes on Bloor St.
-You are standing where passengers waiting for the Bloor St. streetcar stand. There are a few passengers around you,
+You just got off the streetcar. Around you are passengers waiting for the next streetcar. There are a few passengers around you,
 waiting for the streetcar to come. There are big buildings all around you. Towards the south is the sidewalk closest to
 you.
 END
